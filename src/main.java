@@ -128,7 +128,7 @@ public class main {
                         do {
                             System.out.println("Choose a number ");
                             System.out.println("1:User RequestRide");
-                            System.out.println("3:exit");
+                            System.out.println("2:exit");
                             int choicey;
                             choicey = s.nextInt();
                             if (choicey == 1)
