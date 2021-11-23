@@ -230,6 +230,244 @@ public class main {
 
                 }
             }
+            else if (choice == 4)
+            {
+                String passwordo;
+                boolean goes = true;
+                for (int i = 0; i < u1.drivers.size(); i++) {
+                    System.out.println(i+1+"-"+u1.drivers.get(i).username);
+                }
+                System.out.println("Choose the user to login with");
+                int loggeduser = s.nextInt();
+                if(loggeduser == 1)
+                {
+                    boolean flag1 = true;
+                    System.out.println("Enter Password");
+                    passwordo = s.next();
+                    if (driver.login(u1.drivers.get(loggeduser-1).username,passwordo))
+                    {
+                        do {
+                            System.out.println("Choose a number ");
+                            System.out.println("1:Add Favourite areas");
+                            System.out.println("2:Set Offer");
+                            System.out.println("3:Return to main menu");
+                            System.out.println("4:exit");
+                            int choicey;
+                            boolean flag = true;
+                            choicey = s.nextInt();
+                            if (choicey == 1)
+                            {
+                                int num;
+                                String area;
+                                do{
+                                    System.out.println("Enter the Area : ");
+                                    area =  s.next();
+                                    driver.addFavoriteAreas(area);
+                                    System.out.println("Do u want to enter another one ?  (y/n) ");
+                                    String opt = s.next();
+                                    if (opt.equals("y"))
+                                    {
+                                        continue;
+                                    }
+                                    else if (opt.equals("n"))
+                                    {
+                                        flag = false;
+                                        break;
+                                    }
+                                }while(flag);
+                                System.out.println(driver.ListFavAreasRides());
+                            }
+                            else if (choicey==2) {
+
+                                if(rideManager.driverMactchedRides(driver))
+                                {
+                                    for (int i = 0; i < rideManager.matchedride.size(); i++) {
+                                        System.out.println(i + 1 + " - " + rideManager.rides.get(rideManager.matchedride.get(i)));
+                                    }
+
+                                    System.out.println("Choose a ride to add an offer on");
+                                    int rideno = s.nextInt();
+                                    System.out.println("Please enter the offer");
+                                    int offer = s.nextInt();
+                                    driver.p.registerObserver(u1.passengers.get(rideno - 1));
+                                    driver.p.SetOffer(offer);
+                                    driver.r.Offers.add(offer);
+                                }
+                                else
+                                {
+                                    flag1 = false;
+                                }
+                            }
+                            else if (choicey == 3)
+                            {
+                                flag1 = false;
+                            }
+                            else if (choicey == 4)
+                            {
+                                System.exit(0);
+                            }
+                        }while(flag1);
+                    }
+                    else
+                    {
+                        System.out.println("Login Failed choose another user or check your password");
+                        //return;
+                    }
+
+                }
+                else if (loggeduser == 2)
+                {
+                    boolean flag1 = true;
+                    System.out.println("Enter Password");
+                    passwordo = s.next();
+                    if (driverz.login(u1.drivers.get(loggeduser-1).username,passwordo))
+                    {
+                        do {
+                            System.out.println("Choose a number ");
+                            System.out.println("1:Add Favourite areas");
+                            System.out.println("2:Set Offer");
+                            System.out.println("3:Return to main menu");
+                            System.out.println("4:exit");
+                            int choicey;
+                            boolean flag = true;
+                            choicey = s.nextInt();
+                            if (choicey == 1)
+                            {
+                                int num;
+                                String area;
+                                do{
+                                    System.out.println("Enter the Area : ");
+                                    area =  s.next();
+                                    driverz.addFavoriteAreas(area);
+                                    System.out.println("Do u want to enter another one ?  (y/n) ");
+                                    String opt = s.next();
+                                    if (opt.equals("y"))
+                                    {
+                                        continue;
+                                    }
+                                    else if (opt.equals("n"))
+                                    {
+                                        flag = false;
+                                        break;
+                                    }
+                                }while(flag);
+                                System.out.println(driverz.ListFavAreasRides());
+                            }
+                            else if (choicey==2) {
+
+                                if(rideManager.driverMactchedRides(driverz))
+                                {
+                                    for (int i = 0; i < rideManager.matchedride.size(); i++) {
+                                        System.out.println(i + 1 + " - " + rideManager.rides.get(rideManager.matchedride.get(i)));
+                                    }
+
+                                    System.out.println("Choose a ride to add an offer on");
+                                    int rideno = s.nextInt();
+                                    System.out.println("Please enter the offer");
+                                    int offer = s.nextInt();
+                                    driverz.p.registerObserver(u1.passengers.get(rideno - 1));
+                                    driverz.p.SetOffer(offer);
+                                    driverz.r.Offers.add(offer);
+                                }
+                                else
+                                {
+                                    flag1 = false;
+                                }
+                            }
+                            else if (choicey == 3)
+                            {
+                                flag1 = false;
+                            }
+                            else if (choicey == 4)
+                            {
+                                System.exit(0);
+                            }
+                        }while(flag1);
+                    }
+                    else
+                    {
+                        System.out.println("Login Failed choose another user or check your password");
+                        //return;
+                    }
+                }
+                else if (loggeduser == 3)
+                {
+                    boolean flag1 = true;
+                    System.out.println("Enter Password");
+                    passwordo = s.next();
+                    if (newDriver.login(u1.drivers.get(loggeduser-1).username,passwordo))
+                    {
+                        do {
+                            System.out.println("Choose a number ");
+                            System.out.println("1:Add Favourite areas");
+                            System.out.println("2:Set Offer");
+                            System.out.println("3:Return to main menu");
+                            System.out.println("4:exit");
+                            int choicey;
+                            boolean flag = true;
+                            choicey = s.nextInt();
+                            if (choicey == 1)
+                            {
+                                int num;
+                                String area;
+                                do{
+                                    System.out.println("Enter the Area : ");
+                                    area =  s.next();
+                                    newDriver.addFavoriteAreas(area);
+                                    System.out.println("Do u want to enter another one ?  (y/n) ");
+                                    String opt = s.next();
+                                    if (opt.equals("y"))
+                                    {
+                                        continue;
+                                    }
+                                    else if (opt.equals("n"))
+                                    {
+                                        flag = false;
+                                        break;
+                                    }
+                                }while(flag);
+                                System.out.println(newDriver.ListFavAreasRides());
+                            }
+                            else if (choicey==2) {
+
+                                if(rideManager.driverMactchedRides(newDriver))
+                                {
+                                    for (int i = 0; i < rideManager.matchedride.size(); i++) {
+                                        System.out.println(i + 1 + " - " + rideManager.rides.get(rideManager.matchedride.get(i)));
+                                    }
+
+                                    System.out.println("Choose a ride to add an offer on");
+                                    int rideno = s.nextInt();
+                                    System.out.println("Please enter the offer");
+                                    int offer = s.nextInt();
+                                    newDriver.p.registerObserver(u1.passengers.get(rideno - 1));
+                                    newDriver.p.SetOffer(offer);
+                                    newDriver.r.Offers.add(offer);
+                                }
+                                else
+                                {
+                                    flag1 = false;
+                                }
+                            }
+                            else if (choicey == 3)
+                            {
+                                flag1 = false;
+                            }
+                            else if (choicey == 4)
+                            {
+                                System.exit(0);
+                            }
+                        }while(flag1);
+                    }
+                    else
+                    {
+                        System.out.println("Login Failed choose another user or check your password");
+                        //return;
+                    }
+                }
+
+            }
+
 
         } while (status);
     }
