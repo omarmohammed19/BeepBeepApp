@@ -110,6 +110,126 @@ public class main {
                     System.out.println(u1.drivers.get(i).username);
                 }
             }
+            else if(choice == 3)
+            {
+                String passwordo ;
+                boolean goes = true;
+                for (int i = 0; i < u1.passengers.size(); i++) {
+                    System.out.println(i+1+"-"+u1.passengers.get(i).username);
+                }
+                System.out.println("Choose the user to login with");
+                int loggeduser = s.nextInt();
+                if(loggeduser == 1)
+                {
+                    System.out.println("Enter Password");
+                    passwordo = s.next();
+                    if (user.login(u1.passengers.get(loggeduser-1).username,passwordo))
+                    {
+                        do {
+                            System.out.println("Choose a number ");
+                            System.out.println("1:User RequestRide");
+                            System.out.println("3:exit");
+                            int choicey;
+                            choicey = s.nextInt();
+                            if (choicey == 1)
+                            {
+                                String source , destination;
+                                System.out.println("Enter source");
+                                source = s.nextLine();
+                                source = s.nextLine();
+                                System.out.println("Enter destination");
+                                destination = s.nextLine();
+                                user.r1.requestrides(source, destination);
+                                rideManager.addRide(user);
+                                goes=false;
+                            }
+                            else if (choicey == 2)
+                            {
+                                System.exit(0);
+                            }
+                        }while(goes);
+                    }
+                    else
+                    {
+                        System.out.println("Login Failed choose another user or check your password");
+                        //return;
+                    }
+
+                }
+                else if(loggeduser == 2)
+                {
+                    System.out.println("Enter Password");
+                    passwordo = s.next();
+                    if (userq.login(u1.passengers.get(loggeduser-1).username,passwordo))
+                    {
+                        do {
+                            System.out.println("Choose a number ");
+                            System.out.println("1:User RequestRide");
+                            System.out.println("2:exit");
+                            int choicey;
+                            choicey = s.nextInt();
+                            if (choicey == 1)
+                            {
+                                String source , destination;
+                                System.out.println("Enter source");
+                                source = s.nextLine();
+                                source = s.nextLine();
+                                System.out.println("Enter destination");
+                                destination = s.nextLine();
+                                userq.r1.requestrides(source, destination);
+                                rideManager.addRide(userq);
+                                goes=false;
+                            }
+                            else if (choicey == 2)
+                            {
+                                System.exit(0);
+                            }
+                        }while(goes);
+                    }
+                    else
+                    {
+                        System.out.println("Login Failed choose another user or check your password");
+                    }
+
+                }
+                else if(loggeduser == 3)
+                {
+                    System.out.println("Enter Password");
+                    passwordo = s.next();
+                    if (newUser.login(u1.passengers.get(loggeduser-1).username,passwordo))
+                    {
+                        do {
+                            System.out.println("Choose a number ");
+                            System.out.println("1:User RequestRide");
+                            System.out.println("3:exit");
+                            int choicey;
+                            choicey = s.nextInt();
+                            if (choicey == 1)
+                            {
+                                String source , destination;
+                                System.out.println("Enter source");
+                                source = s.nextLine();
+                                source = s.nextLine();
+                                System.out.println("Enter destination");
+                                destination = s.nextLine();
+                                newUser.r1.requestrides(source, destination);
+                                rideManager.addRide(newUser);
+                                goes=false;
+                            }
+                            else if (choicey == 2)
+                            {
+                                System.exit(0);
+                            }
+                        }while(goes);
+                    }
+                    else
+                    {
+                        System.out.println("Login Failed choose another user or check your password");
+                        //return;
+                    }
+
+                }
+            }
 
         } while (status);
     }
