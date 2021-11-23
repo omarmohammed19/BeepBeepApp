@@ -6,6 +6,7 @@ public class Driver extends User{
     public String nationalid;
     public int verified;
     List<String> favouritaAreas = new ArrayList<>();
+    Ride r = new Ride();
     PriceNotifier p = new PriceNotifier();
 
 
