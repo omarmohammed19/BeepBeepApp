@@ -467,6 +467,19 @@ public class main {
                 }
 
             }
+            else if (choice ==5)
+            {
+                if(admin.getPendingList(u1))
+                {
+                    System.out.println("Enter number of driver to verify");
+                    driverno = s.nextInt();
+                    admin.verifyDriver(driverno, u1);
+                }
+                else
+                {
+                    System.out.println("The pending list is empty");
+                }
+            }
 
 
         } while (status);
