@@ -23,5 +23,11 @@ public class Ride {
     public void setDestination(String destination) {
         this.destination = destination;
     }
+    public void requestrides(String source, String destination)
+    {
+        this.source=source;
+        this.destination=destination;
+        System.out.println("Ride requested from " + source +  " to " + destination);
 
+    }
 }
