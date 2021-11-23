@@ -57,5 +57,60 @@ public class main {
         u1.registerDriver(driverz);
         boolean status = true;
 
+        do {
+            System.out.println("Choose a number ");
+            System.out.println("1:Register User");
+            System.out.println("2:Register Driver");
+            System.out.println("3:User Login");
+            System.out.println("4:Driver Login");
+            System.out.println("5:Verify Drivers");
+            int choice;
+            choice = s.nextInt();
+            if (choice == 1)
+            {
+                String newuser, newpass, newmail, newphone;
+                System.out.println("Enter Username");
+                newuser = s.next();
+                System.out.println("Enter Password");
+                newpass = s.next();
+                System.out.println("Enter Email");
+                newmail = s.next();
+                System.out.println("Enter Phone");
+                newphone = s.next();
+                newUser = new Passenger(Type, newuser, newmail, newpass, newphone);
+                u1.registerUser(newUser);
+                System.out.println("All registered Passengers");
+
+                for (int i = 0; i < u1.passengers.size(); i++)
+                {
+                    System.out.println(i + 1 + "-" + u1.passengers.get(i).username);
+                }
+            }
+            else if(choice == 2)
+            {
+                String newdriver , newpassdriver , newmaildriver , newphonedriver , newlicense , newnationalid;
+                System.out.println("Enter Username");
+                newdriver = s.next();
+                System.out.println("Enter Password");
+                newpassdriver = s.next();
+                System.out.println("Enter Email");
+                newmaildriver = s.next();
+                System.out.println("Enter Phone");
+                newphonedriver = s.next();
+                System.out.println("Enter Licenseid");
+                newlicense = s.next();
+                System.out.println("Enter nationalid");
+                newnationalid = s.next();
+                newDriver = new Driver(Type,newdriver,newmaildriver,newpassdriver,newphonedriver,newlicense,newnationalid,verified);
+                u1.registerDriver(newDriver);
+                System.out.println("All registered drivers");
+
+                for (int i = 0; i < u1.drivers.size(); i++)
+                {
+                    System.out.println(u1.drivers.get(i).username);
+                }
+            }
+
+        } while (status);
     }
 }
