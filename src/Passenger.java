@@ -1,4 +1,4 @@
-public class Passenger extends User {
+public class Passenger extends User implements Observer {
     public Passenger(String Type ,String user, String mail, String pass, String mobile)
     {
         this.Type="p";
@@ -23,5 +23,10 @@ public class Passenger extends User {
             System.out.println("Username Incorrect Login failed");
             return false;
         }
+    }
+
+    @Override
+    public void update(int offer) {
+        System.out.println("Driver's offer is " + offer );
     }
 }
